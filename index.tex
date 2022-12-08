@@ -3,11 +3,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[singlelinecheck=false]{caption}
 \usepackage{subfiles}
-\usepackage{lipsum}
 \usepackage{listings}
 \usepackage{shortvrb}
 \usepackage{stfloats}
 \usepackage[colorlinks=true,urlcolor=blue,linkcolor=brown]{hyperref}
+\usepackage{perpage}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 
@@ -37,11 +37,11 @@
 % TODO: story_2
 % TODO: story_3
 
-% Reset footnote counter for each new page
-\usepackage{perpage} %the perpage package
-
 % Start document
 \begin{document}
+
+% Polish translation
+\renewcommand{\partname}{Część}
 
 \frontmatter
 
@@ -95,9 +95,9 @@
 
 % Your content goes here
 
-\subfile{stories/story_1}
-\subfile{stories/story_2}
-\subfile{stories/story_3}
+\input{stories/story_1.tex}
+\input{stories/story_2.tex}
+\input{stories/story_3.tex}
 
 % End document
 \end{document}

@@ -1,4 +1,4 @@
-TEXLIVE_PACKAGES=texlive-latex-base texlive-latex-extra texlive-fonts-extra
+TEXLIVE_PACKAGES=texlive-latex-base texlive-latex-extra texlive-fonts-extra rubber
 
 init:
 	apt install -y ${TEXLIVE_PACKAGES}
@@ -10,8 +10,10 @@ purge:
 up:
 	git submodule update --init --recursive
 
-build:
-	TEXINPUTS=./lib//: pdflatex "\newcommand\gitrev{${shell git describe --always --dirty --abbrev=0}}\input{index}"
+build: index.pdf
 
 clean:
 	rm *.aux *.log *.out *.pdf *.toc
+
+%.pdf: %.tex
+	echo "\\\\newcommand\\\\gitrev{${shell git describe --always --dirty --abbrev=0}}\\\\input{$<}" | TEXINPUTS=./lib//: rubber-pipe -d > $@
