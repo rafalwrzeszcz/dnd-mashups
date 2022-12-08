@@ -2,5 +2,6 @@
 *.aux
 *.iml
 *.log
+*.out
 *.pdf
 *.toc

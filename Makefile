@@ -11,7 +11,7 @@ up:
 	git submodule update --init --recursive
 
 build:
-	TEXINPUTS=./lib//: pdflatex index.tex
+	TEXINPUTS=./lib//: pdflatex "\newcommand\gitrev{${shell git describe --always --dirty --abbrev=0}}\input{index}"
 
 clean:
-	rm *.aux *.pdf *.toc
+	rm *.aux *.log *.out *.pdf *.toc
