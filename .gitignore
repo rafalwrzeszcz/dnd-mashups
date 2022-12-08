@@ -1,2 +1,6 @@
 .idea/
+*.aux
 *.iml
+*.log
+*.pdf
+*.toc
