@@ -13,7 +13,7 @@ up:
 build: index.pdf
 
 clean:
-	rm *.aux *.log *.out *.pdf *.toc
+	rm -f *.aux *.log *.out *.pdf *.toc
 
 %.pdf: %.tex
 	echo "\\\\newcommand\\\\gitrev{${shell git describe --always --dirty --abbrev=0}}\\\\input{$<}" | TEXINPUTS=./lib//: rubber-pipe -d > $@

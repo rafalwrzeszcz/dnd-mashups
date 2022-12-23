@@ -8,6 +8,7 @@
 \usepackage{stfloats}
 \usepackage[colorlinks=true,urlcolor=blue,linkcolor=brown]{hyperref}
 \usepackage{perpage}
+\usepackage{parskip}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 
@@ -32,15 +33,11 @@
 \large \booksubtitle}
 \author{\bookauthor}
 
-% TODO: PL translation
-% TODO: story_1
-% TODO: story_2
-% TODO: story_3
-
 % Start document
 \begin{document}
 
 % Polish translation
+\renewcommand*\contentsname{Spis treści}
 \renewcommand{\partname}{Część}
 
 \frontmatter
@@ -81,9 +78,13 @@
 
 \begin{minipage}{0.94\textwidth}
 {\footnotesize
-	DUNGEONS \& DRAGONS, D\&D, Wizards of the Coast, Forgotten Realms, Ravenloft, the dragon ampersand, and all other Wizards of the Coast product names, and their respective logos are trademarks of Wizards of the Coast in the USA and other countries.\\
-	This work contains material that is copyright Wizards of the Coast and/or other authors. Such material is used with permission under the Community Content Agreement for Dungeon Masters Guild.\\
-	All other original material in this work is copyright by \bookauthor\ and published under the Community Content Agreement for Dungeon Masters Guild.}
+	DUNGEONS \& DRAGONS, D\&D, Wizards of the Coast, Forgotten Realms, Ravenloft, the dragon ampersand, and all other
+	Wizards of the Coast product names, and their respective logos are trademarks of Wizards of the Coast in the USA and
+	other countries.\\
+	This work contains material that is copyright Wizards of the Coast and/or other authors. Such material is used with
+	permission under the Community Content Agreement for Dungeon Masters Guild.\\
+	All other original material in this work is copyright by \bookauthor\ and published under the Community Content
+	Agreement for Dungeon Masters Guild.}
 \end{minipage}
 \end{onecolumn}
 \end{titlepage}
@@ -94,6 +95,34 @@
 \mainmatter%
 
 % Your content goes here
+
+\clearpage
+
+\begin{onecolumn}
+\section{Od autora}
+Prowadząc sesje D\&D często korzystam z gotowych przygód i innych materiałów, ale zazwyczaj wplatam je w dłuższą
+kampanię łącząc wątki pomiędzy nimi tak, aby nie były to tylko oddzielne etapy, lecz tworzyły spójną całość i zazębiały
+się. Pozwala to graczom mocniej zaangażować się, a także sprawia, że ich decyzje mogą mieć większą wagę dając
+konsekwencje w późniejszych momentach gry.
+\par
+Postanowiłem je spisać i udostępnić - je za darmo. Pamiętaj czytelniku, że są to jedynie pomysły na połączenie już
+istniejących przygód. Materiały poszczególnych przygód są samodzielnymi utworami - musisz je osobno zakupić (niektóre z
+nich są dostępne za darmo), a także każdy z tych otworów może mieć własne postanowienia licencyjne.
+\par
+Poszczególne pomysły zazwyczaj składają się z kilku aspektów, które można stosować wybiórczo.
+\par
+Musisz też wiedzieć, że nie jestem nader doświadczonym Mistrzem Gry - gramy zawsze w grupie znajomych i przede wszystkim
+dobrze się bawimy. Tak więc nie zdziw się, jeśli niniejszy materiał lub jakiś jego element nie spełni twoich
+wygórowanych standardów. Myślę, że jest to uczciwy układ w przypadku ceny zero. Tak, jeśli jesteś z Poznania na przykład
+możesz pobrać dwa.
+\par
+Sam projekt jest udostępniony na platformie \href{https://github.com/rafalwrzeszcz/dnd-mashups}{GitHub}, gdzie każdy
+chcący coś poprawić, albo dodać coś nowego, może to zrobić (tak, też za darmo).
+\end{onecolumn}
+
+% TODO: PL translation
+% TODO: LaTeX build cleanup
+% TODO: references list (automated?)
 
 \input{stories/story_1.tex}
 \input{stories/story_2.tex}
