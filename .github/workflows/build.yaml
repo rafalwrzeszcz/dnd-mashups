@@ -1,0 +1,27 @@
+on:
+    push:
+        tags: "**"
+        branches: "**"
+    pull_request:
+        branches: "**"
+
+jobs:
+    build:
+        if: "!contains(github.event.head_commit.message, '[skip ci]') || (github.event_name == 'schedule')"
+        runs-on: "ubuntu-20.04"
+        steps:
+            -
+                uses: "actions/checkout@v3.2.0"
+                with:
+                    submodules: "recursive"
+            -
+                run: "sudo make init"
+            -
+                run: "make up"
+            -
+                run: "make build"
+            -
+                uses: "actions/upload-artifact@v3.1.1"
+                with:
+                    name: "pdf"
+                    path: "*.pdf"
