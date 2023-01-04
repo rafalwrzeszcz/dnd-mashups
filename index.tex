@@ -9,6 +9,9 @@
 \usepackage[colorlinks=true,urlcolor=blue,linkcolor=brown]{hyperref}
 \usepackage{perpage}
 \usepackage{parskip}
+\usepackage[backend=biber]{biblatex}
+
+\addbibresource{index.bib}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 
@@ -33,7 +36,6 @@
 \large \booksubtitle}
 \author{\bookauthor}
 
-% Start document
 \begin{document}
 
 % Polish translation
@@ -52,7 +54,7 @@
 	{\Huge \booktitle}
 
 	\vspace{0.5cm}
-    % TODO: grafika
+    % Maybe some day some graphics here
 	\begin{picture}(500,200)
 		\put(0,0){\framebox(500,200)}
 	\end{picture}
@@ -92,9 +94,7 @@
 
 \tableofcontents
 
-\mainmatter%
-
-% Your content goes here
+\mainmatter
 
 \clearpage
 
@@ -121,12 +121,12 @@ chcący coś poprawić, albo dodać coś nowego, może to zrobić (tak, też za 
 \end{onecolumn}
 
 % TODO: PL translation
-% TODO: LaTeX build cleanup
-% TODO: references list (automated?)
 
 \input{stories/story_1.tex}
 \input{stories/story_2.tex}
 \input{stories/story_3.tex}
 
-% End document
+\clearpage
+\printbibliography[heading=bibintoc,title=Odnośniki]
+
 \end{document}

@@ -1,7 +1,9 @@
 .idea/
 *.aux
+*.bcf
 *.iml
 *.log
 *.out
 *.pdf
+*.run.xml
 *.toc

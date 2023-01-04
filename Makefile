@@ -1,4 +1,4 @@
-TEXLIVE_PACKAGES=texlive-latex-base texlive-latex-extra texlive-fonts-extra rubber
+TEXLIVE_PACKAGES=texlive-latex-base texlive-latex-extra texlive-bibtex-extra texlive-fonts-extra rubber biber
 
 init:
 	apt install -y ${TEXLIVE_PACKAGES}
@@ -13,7 +13,7 @@ up:
 build: index.pdf
 
 clean:
-	rm -f *.aux *.log *.out *.pdf *.toc
+	rm -f *.aux *.bcf *.log *.out *.pdf *.run.xml *.toc
 
 %.pdf: %.tex
-	echo "\\\\newcommand\\\\gitrev{${shell git describe --always --dirty --abbrev=0}}\\\\input{$<}" | TEXINPUTS=./lib//: rubber-pipe -d > $@
+	echo "\\\\newcommand\\\\gitrev{${shell git describe --always --dirty --abbrev=0}}\\\\input{$<}" | TEXINPUTS=./lib//: rubber-pipe -m biblatex -d > $@
