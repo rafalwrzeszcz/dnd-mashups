@@ -17,7 +17,7 @@
 
 \MakeShortVerb{|}
 
-\lstset{%
+\lstset{
     basicstyle=\ttfamily,
     language=[LaTeX]{TeX},
     breaklines=true,
@@ -26,6 +26,9 @@
 \newcommand{\bookauthor}{Rafa\l\ Wrzeszcz}
 \newcommand{\booktitle}{D\&D Mashups}
 \newcommand{\booksubtitle}{Pomysły na cudze pomysły}
+
+% toolkit macros
+\newcommand{\skill}[1]{\emph{\textbf{#1}}}
 
 \pdfinfo{
 	/Author (\bookauthor)
@@ -39,7 +42,7 @@
 \begin{document}
 
 % Polish translation
-\renewcommand*\contentsname{Spis treści}
+\renewcommand{\contentsname}{Spis treści}
 \renewcommand{\partname}{Część}
 
 \frontmatter
@@ -120,7 +123,7 @@ Sam projekt jest udostępniony na platformie \href{https://github.com/rafalwrzes
 chcący coś poprawić, albo dodać coś nowego, może to zrobić (tak, też za darmo).
 \end{onecolumn}
 
-% TODO: PL translation
+% TODO: PL translation & fonts
 
 \input{stories/story_1.tex}
 \input{stories/story_2.tex}
